@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 
 # Your Canva API credentials (store these securely in production)
-CLIENT_ID = ""
-CLIENT_SECRET = ""
-REDIRECT_URI = ""  # Must match what you register in Canva
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 
 @app.route('/')
